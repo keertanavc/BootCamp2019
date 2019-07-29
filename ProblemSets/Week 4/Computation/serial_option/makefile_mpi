@@ -1,0 +1,11 @@
+all:    BS_MPI.exec
+
+#######################################################################
+## BS
+BS_MPI.exec : BS_MPI.cpp
+	mpicxx -O3 BS_MPI.cpp -o BS_MPI.exec
+	mpiexec -np 4 BS_MPI.exec
+#######################################################################
+
+clean :
+	m -f *.exec
